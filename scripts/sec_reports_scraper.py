@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 # URL de la page des rapports SEC
 BASE_URL = "https://investor.apple.com/sec-filings/default.aspx"
-DOWNLOAD_FOLDER = "sec_reports"
+DOWNLOAD_FOLDER = "../data/sec_reports"
 
 # Créez un dossier pour stocker les PDF
 os.makedirs(DOWNLOAD_FOLDER, exist_ok=True)

@@ -1,7 +1,7 @@
 from PyPDF2 import PdfReader
 
-reader = PdfReader("quick-ticker-symbol-list.pdf")
-ticker_info = open("ticker_info.csv", "a+")
+reader = PdfReader("../data/quick-ticker-symbol-list.pdf")
+ticker_info = open("../data/ticker_info.csv", "a+")
 ticker_info.write("ticker, company_name\n")
 
 for i, page in enumerate(reader.pages):

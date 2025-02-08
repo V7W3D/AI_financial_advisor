@@ -33,5 +33,5 @@ def fetch_stock_price_finnhub(ticker, start_date, end_date):
 # Exemple : Données AAPL pour 2023
 import pandas as pd
 aapl_data_finnhub = fetch_stock_price_finnhub("AAPL", "2023-01-01", "2023-12-31")
-aapl_data_finnhub.to_csv("AAPL_finnhub_data_2023.csv", index=False)
+aapl_data_finnhub.to_csv("../data/AAPL_finnhub_data_2023.csv", index=False)
 print("Données sauvegardées dans AAPL_finnhub_data_2023.csv")
