@@ -2,9 +2,8 @@ from glob import glob
 from PyPDF2 import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import faiss
-import numpy as np
-import torch
 from sentence_transformers import SentenceTransformer
+import json
 
 files = glob("../data/sec_reports/*.pdf")
 
@@ -36,4 +35,9 @@ index = faiss.IndexFlatIP(embedding_dim)
 # Add normalized embeddings to FAISS
 index.add(embedding_matrix)
 
+# Write FAISS index and text chunks
 faiss.write_index(index, "../data/faiss_index.bin")
+
+structured_chunks = [{"id": i, "text": chunk} for i, chunk in enumerate(chunks)]
+with open("../data/chunks.json", "w") as f:
+    json.dump({"chunks": structured_chunks}, f, indent=4)
