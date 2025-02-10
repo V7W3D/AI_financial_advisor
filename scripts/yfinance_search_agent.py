@@ -1,7 +1,7 @@
 from langchain.agents import Tool, initialize_agent
 from langchain.agents.agent_types import AgentType
 from langchain_openai import ChatOpenAI
-import yfinance_tools
+from scripts import yfinance_tools
 from dotenv import load_dotenv
 import os
 

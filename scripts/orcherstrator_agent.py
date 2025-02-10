@@ -5,9 +5,8 @@ from langchain.agents import Tool, initialize_agent
 from langchain.agents.agent_types import AgentType
 from langchain_openai import ChatOpenAI
 
-# Import the existing agents
-import yfinance_search_agent
-import sec_reports_retreival_agent
+from . import yfinance_search_agent
+from . import sec_reports_retreival_agent
 
 def create_orchestrator_agent(yfinance_agent, faiss_agent):
     """

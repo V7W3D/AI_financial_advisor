@@ -1,7 +1,4 @@
 from yfinance import Ticker, Search
-import ast
-
-from yfinance import Ticker
 
 def get_quote_info(input_string: str) -> str:
     # Split the input string

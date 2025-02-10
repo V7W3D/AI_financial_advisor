@@ -1,7 +1,7 @@
 from langchain.agents import Tool, initialize_agent
 from langchain.agents.agent_types import AgentType
 from langchain_openai import ChatOpenAI
-import sec_reports_retrieval
+from scripts import sec_reports_retrieval
 from dotenv import load_dotenv
 import os
 
