@@ -1,9 +1,4 @@
 import streamlit as st
-import sys
-import os
-
-# Add the directory containing your agents to the Python path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Import the orchestrator and agents
 from scripts import orcherstrator_agent
@@ -45,16 +40,6 @@ def main():
     st.title("🔍 Financial Research Assistant")
     st.markdown("Get comprehensive financial insights with AI-powered research.")
 
-    # Sidebar for additional controls
-    st.sidebar.header("Research Options")
-    research_depth = st.sidebar.slider(
-        "Research Depth", 
-        min_value=1, 
-        max_value=5, 
-        value=3, 
-        help="Higher values may result in more detailed analysis"
-    )
-
     # Initialize agents
     orchestrator = initialize_agents()
     
@@ -80,14 +65,6 @@ def main():
                     # Display results
                     st.subheader("Research Insights")
                     st.markdown(f'<div class="big-font">{response}</div>', unsafe_allow_html=True)
-                    
-                    # Optional: Add confidence/depth indicator based on slider
-                    confidence_map = {
-                        1: "Basic Overview",
-                        3: "Comprehensive Analysis",
-                        5: "Deep Dive Investigation"
-                    }
-                    st.info(f"Research Depth: {confidence_map.get(research_depth, 'Standard Analysis')}")
                 
                 except Exception as e:
                     st.error(f"An error occurred during research: {str(e)}")
