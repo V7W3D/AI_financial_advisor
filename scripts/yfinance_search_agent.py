@@ -1,7 +1,6 @@
-from typing import Optional, List, Dict, Tuple
+from typing import Dict
 from langchain.agents import Tool, initialize_agent
 from langchain.agents.agent_types import AgentType
-from langchain.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 from langchain_community.callbacks.manager import get_openai_callback
 from yfinance import Ticker
@@ -25,7 +24,7 @@ PARAMETER_MAP: ParameterMap = {
     "ebitda margin": "ebitdaMargins",
     "market cap": "marketCap",
     "previous close": "previousClose",
-    "current price": "regularMarketPrice",
+    "current price": "currentPrice",
 }
 
 # Company to ticker mapping
@@ -92,14 +91,7 @@ def get_quote_info(query: str) -> str:
             return f"Parameter {param} not found for {ticker}"
             
         value = quote[param]
-        
-        # Format the response
-        if isinstance(value, (int, float)):
-            if param == "marketCap":
-                value = f"${value:,.2f}"
-            else:
-                value = f"{value:.2%}" if value < 1 else f"{value:.2f}"
-                
+
         return f"The {param} for {ticker} is {value}"
         
     except Exception as e:
@@ -129,11 +121,6 @@ def create_agent():
         You are a helpful financial assistant. Your task is to help users get financial information about companies.
         When users ask about specific financial metrics, use the get_quote tool directly with their query.
         
-        Example user questions:
-        - "What is Tesla's EBITDA margin?"
-        - "What's the market cap of Apple?"
-        - "Show me Microsoft's current price"
-        
         User Question: {input}
         """
 
@@ -145,15 +132,17 @@ def create_agent():
             verbose=True,
             agent_kwargs={
                 "prefix": prompt_template
-            }
+            },
+            handle_parsing_errors=True
         )
         return agent
+
     except Exception as e:
         raise Exception(f"Failed to create agent: {str(e)}")
 
 def main():
     """Main function to demonstrate usage."""
-    user_input = "What is Tesla's market cap?"
+    user_input = "give me some information about Microsoft market cap"
     try:
         agent = create_agent()
         response = agent.run(input=user_input)
