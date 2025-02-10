@@ -48,9 +48,11 @@ def create_orchestrator_agent(yfinance_agent, faiss_agent):
         2. Detailed SEC report analysis
 
         When a query is received:
-        - Use StockQuoteTool directly on the user query for immediate financial metrics
-        - Use SECReportsTool directly on the user query for in-depth contextual information
+        - Use StockQuoteTool directly with the full user query for immediate financial metrics
+        - Use SECReportsTool directly with the full user query for in-depth contextual information
         - Synthesize insights from both sources to provide a holistic answer
+
+        Please return the synthetized insights in your response.
 
         User Question: {input}
         """
@@ -73,7 +75,7 @@ def create_orchestrator_agent(yfinance_agent, faiss_agent):
 
 def main():
     """Main function to demonstrate orchestrator agent usage."""
-    query = "what is Microsoft market cap?"
+    query = "Should I Invest in Microsoft"
 
     try:
         search_agent = yfinance_search_agent.create_agent()

@@ -36,7 +36,7 @@ def create_agent():
         # Create prompt template
         prompt_template = """
         You are a helpful financial assistant. Your task is to help users get financial information about companies.
-        Use the RetrieveDocs tool directly with their query in order to retreive more context from SEC reports.
+        Use the RetrieveDocs tool directly with their full query in order to retreive more context from SEC reports.
 
         User Question: {input}
         """
