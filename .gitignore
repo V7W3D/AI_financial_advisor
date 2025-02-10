@@ -1,2 +1,4 @@
 /env
 /data
+/scripts/__pycache__
+/scripts/.env
