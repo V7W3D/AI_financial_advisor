@@ -44,6 +44,7 @@ def search_faiss(query, top_k=10):
     
     return retrieved_chunks, distances[0]
 
+
 # Example usage
 if __name__ == "__main__":
 
