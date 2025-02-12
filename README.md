@@ -65,7 +65,9 @@ Launch the Streamlit dashboard for interactive financial data analysis:
 ```bash
 streamlit run app/app.py
 ```
-
+<div align="center">
+<img src="./app/image.png" alt="System Design" width="400" height="600">
+</div>
 ### Running Data Processing Scripts
 To retrieve SEC reports manually:
 ```bash
