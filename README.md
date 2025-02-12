@@ -1,5 +1,6 @@
 ## Overview
 ![alt text](system_design.png)
+
 This project provides a comprehensive framework for retrieving, processing, and analyzing financial data, with a focus on SEC reports and stock market information. The system leverages FAISS for efficient similarity search, integrates Yahoo Finance for real-time market data, and automates SEC report retrieval and embedding for financial analysis.
 
 ## Features
