@@ -26,8 +26,6 @@ This project provides a comprehensive framework for retrieving, processing, and 
 │   ├── sec_reports             # Folder containing downloaded SEC reports
 │   ├── ticker_info.csv         # Processed stock ticker information
 │
-├── env                         # Python virtual environment
-│
 ├── scripts
 │   ├── __init__.py             # Script package initialization
 │   ├── orcherstrator_agent.py  # Main orchestrator for pipeline execution
