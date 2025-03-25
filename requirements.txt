@@ -116,7 +116,6 @@ rpds-py==0.22.3
 safetensors==0.5.2
 scikit-learn==1.6.1
 scipy==1.15.1
--e git+ssh://git@github.com/V7W3D/agentic_financial_advisor.git@2a95d031c658a13df0b6222565e6dda2e99726c7#egg=scripts
 sentence-transformers==3.4.1
 six==1.17.0
 smmap==5.0.2
