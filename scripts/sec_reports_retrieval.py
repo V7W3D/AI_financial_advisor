@@ -1,7 +1,10 @@
 import faiss
 import json
 import numpy as np
+import torch
 from sentence_transformers import SentenceTransformer
+
+torch.classes.__path__ = []
 
 def load_faiss_index(index_path):
     # Load the FAISS index from the binary file

@@ -1,5 +1,4 @@
 import os
-from typing import List
 from dotenv import load_dotenv
 from langchain.agents import Tool, initialize_agent
 from langchain.agents.agent_types import AgentType

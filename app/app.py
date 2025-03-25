@@ -1,9 +1,13 @@
 import streamlit as st
+import warnings
 
 # Import the orchestrator and agents
 from scripts import orcherstrator_agent
 from scripts import yfinance_search_agent
 from scripts import sec_reports_retreival_agent
+
+#Suppress warnings
+warnings.filterwarnings("ignore")
 
 def initialize_agents():
     """Initialize the search and SEC report agents."""
